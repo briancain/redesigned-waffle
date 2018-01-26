@@ -202,6 +202,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 580462118}
+  - component: {fileID: 580462119}
   m_Layer: 0
   m_Name: input
   m_TagString: Untagged
@@ -222,6 +223,17 @@ Transform:
   m_Father: {fileID: 619099693}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &580462119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 580462117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a34b1f8898ea14f8f8377ce9c0d8d4a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &619099691
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,6 +261,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33966cb6499114b4ba7bcbb42572e6dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  input: {fileID: 580462119}
+  character: {fileID: 1615601897}
+  volcano: {fileID: 794411844}
 --- !u!4 &619099693
 Transform:
   m_ObjectHideFlags: 0
@@ -290,7 +305,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 693066878}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.46, y: 0.04, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1615601898}
@@ -348,6 +363,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 794411843}
+  - component: {fileID: 794411844}
   m_Layer: 0
   m_Name: volcano
   m_TagString: Untagged
@@ -371,6 +387,22 @@ Transform:
   m_Father: {fileID: 619099693}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &794411844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 794411842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec806f7a5d814abbb339b6c9b8a82c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lavaCloud: {fileID: 2096763743}
+  lavaCircle: {fileID: 0}
+  lavaLine: {fileID: 0}
+  smokeCirlce: {fileID: 0}
+  smokeLine: {fileID: 0}
 --- !u!1 &1050327221
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,6 +532,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629166142caa99f40b7bb136816a33c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actionPose: {fileID: 1050327222}
+  idlePose: {fileID: 693066879}
 --- !u!4 &1615601898
 Transform:
   m_ObjectHideFlags: 0
