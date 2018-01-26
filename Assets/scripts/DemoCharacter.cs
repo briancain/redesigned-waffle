@@ -5,9 +5,11 @@ using UnityEngine;
 public class DemoCharacter : MonoBehaviour {
 	[SerializeField]
 	Transform actionPose;
-	
+
 	[SerializeField]
 	Transform idlePose;
+
+  private Rigidbody2D rb;
 
 	public void SetPose(string pose) {
 		switch(pose) {
@@ -27,10 +29,11 @@ public class DemoCharacter : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		SetPose("idle");
+    rb = gameObject.GetComponent<Rigidbody2D>();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 }

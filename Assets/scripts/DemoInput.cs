@@ -6,7 +6,7 @@ using System;
 public class DemoInput : MonoBehaviour {
 
 	public Action OnActionPressed;
-	public Action OnActionReleased;  
+	public Action OnActionReleased;
 	
 	// Update is called once per frame
 	void Update () {
