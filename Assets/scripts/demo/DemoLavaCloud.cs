@@ -35,7 +35,7 @@ public class DemoLavaCloud : MonoBehaviour {
 		);
 
 		// shake indefinitely
-		shake_tween = transform.DOShakePosition(1,0.8f,20,80,false,false).SetLoops(-1);
+		shake_tween = transform.DOShakePosition(1,new Vector3(0.1f,0.618f,0f),20,80,false,false).SetLoops(-1);
 
 	}
 	public void Deactivate() {
