@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 536424859}
   - component: {fileID: 536424858}
   - component: {fileID: 536424857}
+  - component: {fileID: 536424861}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -336,6 +337,18 @@ Transform:
   m_Father: {fileID: 619099693}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &536424861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 536424856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7730f734cc7f4abc8da6c1a199705a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 536424859}
 --- !u!1 &580462117
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +419,7 @@ MonoBehaviour:
   input: {fileID: 580462119}
   character: {fileID: 1615601897}
   volcano: {fileID: 794411844}
+  _camera: {fileID: 536424861}
 --- !u!4 &619099693
 Transform:
   m_ObjectHideFlags: 0
@@ -447,7 +461,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 693066878}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.35, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1615601898}
@@ -546,6 +560,7 @@ MonoBehaviour:
   smokeCircle: {fileID: 4797376935884568, guid: 9fd2484df4f55d74aac43ef768e5e783,
     type: 2}
   smokeLine: {fileID: 4921218334540836, guid: 7cd2b997d494d6643838ab12260f798f, type: 2}
+  explosionClip: {fileID: 8300000, guid: 76514181c7a354ab79ce4a4cd7f2f380, type: 3}
 --- !u!1001 &896167469
 Prefab:
   m_ObjectHideFlags: 0

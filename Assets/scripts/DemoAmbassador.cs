@@ -13,6 +13,9 @@ public class DemoAmbassador : MonoBehaviour {
   [SerializeField]
   DemoVolcano volcano;
 
+  [SerializeField]
+  DemoCamera _camera;
+
   // Use this for initialization
   void Awake () {
     RegisterInputHandlers();
@@ -22,6 +25,7 @@ public class DemoAmbassador : MonoBehaviour {
     input.OnActionPressed += delegate() {
       character.SetPose("action");
       volcano.Activate();
+      _camera.ShakeIt();
     };
     input.OnActionReleased += delegate() {
       character.SetPose("idle");
