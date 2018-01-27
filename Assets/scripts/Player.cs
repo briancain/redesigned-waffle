@@ -1,19 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Player : MonoBehaviour {
 
+  public Action OnTouchPillar = delegate () {};  
+
+  CharacterActionz actions;
+
+  public void SetActionsSource(CharacterActionz actions) {
+    this.actions = actions;
+  }
+
   private Rigidbody rb;
-  private float transmissionContainer;
 
   public float playerSpeed;
 
   // Use this for initialization
   void Start () {
+    
     rb = GetComponent<Rigidbody>();
-    playerSpeed = 10f;
-    transmissionContainer = 0f;
+    playerSpeed = 20f;
   }
 
   // Update is called once per frame
@@ -21,33 +29,13 @@ public class Player : MonoBehaviour {
   }
 
   void FixedUpdate() {
-    float moveHorizontal = Input.GetAxis("Horizontal");
-    float moveVertical = Input.GetAxis("Vertical");
-    Vector3 force = new Vector3(moveHorizontal, 0.0f, moveVertical);
+    Vector3 force = new Vector3(actions.move.X, 0.0f, actions.move.Y);
     rb.AddForce(force * playerSpeed);
   }
 
   void OnCollisionEnter(Collision col) {
     if(col.gameObject.tag == "Pilar") {
-      Debug.Log("Time to Charge!!!!");
-    }
-  }
-
-  void OnCollisionStay(Collision col) {
-    if(col.gameObject.tag == "Pilar") {
-      Debug.Log("Charging..." + transmissionContainer + "%");
-      if (transmissionContainer < 100f) {
-        transmissionContainer += 1.0f;
-      }
-    }
-  }
-
-  void OnCollisionExit(Collision col) {
-    if(col.gameObject.tag == "Pilar") {
-      Debug.Log("Left Pilar at " + transmissionContainer + "%");
-      if (transmissionContainer < 100f) {
-        transmissionContainer = 0f;
-      }
+      OnTouchPillar();
     }
   }
 }
