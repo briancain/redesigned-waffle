@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DemoVolcano : MonoBehaviour {
 	[SerializeField]
-	Transform lavaCloud;
+	DemoLavaCloud lavaCloud;
 
 	[SerializeField]
 	Transform lavaCircle;
@@ -13,16 +13,16 @@ public class DemoVolcano : MonoBehaviour {
 	Transform lavaLine;
 
 	[SerializeField]
-	Transform smokeCirlce;
+	Transform smokeCircle;
 
 	[SerializeField]
 	Transform smokeLine;
 
 	public void Activate() {
-		lavaCloud.gameObject.SetActive(true);
+		lavaCloud.Activate();
 	}
 	public void Deactivate() {
-		lavaCloud.gameObject.SetActive(false);
+		lavaCloud.Deactivate();
 	}
 
 	// Use this for initialization
