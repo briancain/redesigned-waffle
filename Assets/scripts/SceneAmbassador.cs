@@ -72,6 +72,7 @@ public class SceneAmbassador : MonoBehaviour {
     audio = GetComponent<AudioSource>();
     // TODO: Uncomment me before shipping pls :D
     //m_Play = true;
+    audio.volume = 0.5f;
     m_ToggleAudio = true;
   }
 

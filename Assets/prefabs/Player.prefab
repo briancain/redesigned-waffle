@@ -2533,6 +2533,7 @@ MonoBehaviour:
   rightclaw: {fileID: 65444182178080616}
   emissionPickupClip: {fileID: 8300000, guid: 545a386e1aafd4f5e99141079d954994, type: 3}
   stunnedClip: {fileID: 8300000, guid: e528e569c9a4b45e6b88f512e3e7ffe2, type: 3}
+  attackClip: {fileID: 8300000, guid: 023cbc518d3944cd4afc3e7f2b260e67, type: 3}
   stunTimeout: 0.5
   normSpeed: 15
   slowSpeed: 7

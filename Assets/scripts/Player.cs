@@ -37,6 +37,8 @@ public class Player : MonoBehaviour {
   AudioClip emissionPickupClip;
   [SerializeField]
   AudioClip stunnedClip;
+  [SerializeField]
+  AudioClip attackClip;
 
   CharacterActionz actions;
 
@@ -92,7 +94,10 @@ public class Player : MonoBehaviour {
   void Attack() {
     // Animate rig to swing
     // play melee sound
-    animator.SetTrigger("Attack");
+    if (!holdingEmission) {
+      animator.SetTrigger("Attack");
+      audio.PlayOneShot(attackClip, 0.9f);
+    }
   }
 
   void FixedUpdate() {
