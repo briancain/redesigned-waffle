@@ -5,9 +5,6 @@ using UnityEngine;
 public class Pilar : MonoBehaviour {
 
   [SerializeField]
-  Emission EmissionPrefab;
-
-  [SerializeField]
   GameObject emissionObject;
 
   private float nextActionTime = 0.0f;
