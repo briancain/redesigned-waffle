@@ -5,78 +5,77 @@ using InControl;
 
 public class SceneAmbassador : MonoBehaviour {
 
-	[SerializeField]
-	InputManager input;
+  [SerializeField]
+  InputManager input;
 
-	[SerializeField]
-	PlayerManager players;
+  [SerializeField]
+  PlayerManager players;
 
-	enum GameState {
-		TITLE,
-		PREGAME,
-		PLAYING,
-		GAMEOVER
-	}
-	GameState state;
+  enum GameState {
+    TITLE,
+    PREGAME,
+    PLAYING,
+    GAMEOVER
+  }
+  GameState state;
 
-	void SetState(GameState newstate) {
-		print(newstate.ToString());
+  void SetState(GameState newstate) {
+    print(newstate.ToString());
 
-		switch(newstate) {
-			case GameState.TITLE:
-				players.Reset();
-				ShowTitle();
-				break;
-			case GameState.PREGAME:
-				HideTitle();
-				break;
-			case GameState.PLAYING:
-			break;
-			case GameState.GAMEOVER:
-			break;
-		}
+    switch(newstate) {
+      case GameState.TITLE:
+        players.Reset();
+        ShowTitle();
+        break;
+      case GameState.PREGAME:
+        HideTitle();
+        break;
+      case GameState.PLAYING:
+      break;
+      case GameState.GAMEOVER:
+      break;
+    }
 
-		state = newstate;
-	}
+    state = newstate;
+  }
 
-	void Awake () {
+  void Awake () {
 
-		// initialize bindings
-		InitPlayers();
-		InitInput();
+    // initialize bindings
+    InitPlayers();
+    InitInput();
 
-		SetState(GameState.TITLE);
-	}
+    SetState(GameState.TITLE);
+  }
 
-	void InitInput() {
-		input.OnDevicePressX += delegate (CharacterActionz actions) {
-			if (state == GameState.GAMEOVER) {
-				SetState(GameState.TITLE);
-			}else{
-				// if we're in anything other than ENDGAME, 
-				// and this device is NOT mapped to a player
-				// assign this device to an inactive player
-				// and active it
-				if (players.MapActions(actions)) {
-					if (state == GameState.TITLE) {
-						SetState(GameState.PLAYING);
-					}
-				}
-			}
-		};
-	}
+  void InitInput() {
+    input.OnDevicePressX += delegate (CharacterActionz actions) {
+      if (state == GameState.GAMEOVER) {
+        SetState(GameState.TITLE);
+      }else{
+        // if we're in anything other than ENDGAME,
+        // and this device is NOT mapped to a player
+        // assign this device to an inactive player
+        // and active it
+        if (players.MapActions(actions)) {
+          if (state == GameState.TITLE) {
+            SetState(GameState.PLAYING);
+          }
+        }
+      }
+    };
+  }
 
-	void InitPlayers() {
-		players.OnMagicEvent += delegate() {
-			SetState(GameState.GAMEOVER);
-		};
-	}
+  void InitPlayers() {
+    players.OnMagicEvent += delegate() {
+      SetState(GameState.GAMEOVER);
+    };
+  }
 
-	void ShowTitle() {
+  void ShowTitle() {
 
-	}
-	void HideTitle() {
+  }
+  void HideTitle() {
 
-	}
-	
+  }
 }
