@@ -20,7 +20,6 @@ public class Pilar : MonoBehaviour {
         nextActionTime += period;
         GenerateEmission();
      }
-
   }
 
   void GenerateEmission() {
@@ -31,6 +30,7 @@ public class Pilar : MonoBehaviour {
     dir.x += randomXPosition;
     dir.y += 2.5f;
     dir.z += randomZPosition;
-    var emission = Instantiate(EmissionPrefab, dir, Quaternion.identity, transform);
+
+    Instantiate(EmissionPrefab, dir, Quaternion.identity, transform);
   }
 }
