@@ -269,8 +269,8 @@ MonoBehaviour:
   baseMaterial: {fileID: 2100000, guid: 7b2f3b746ead14d91824cf61836b8fcd, type: 2}
   muteMaterial: {fileID: 2100000, guid: e406d8a9d8cea471e959cda382bbb3d4, type: 2}
   cornerMesh: {fileID: 23102422784044256}
-  playerMaterial: {fileID: 2100000, guid: ff3c68ad9b5454ae8b57c2fcc4a17a1e, type: 2}
-  babbyMaterial: {fileID: 2100000, guid: ff3c68ad9b5454ae8b57c2fcc4a17a1e, type: 2}
+  playerMaterial: {fileID: 2100000, guid: 12e7670e8835c4659a95a7524ad4c90d, type: 2}
+  babbyMaterial: {fileID: 2100000, guid: 12e7670e8835c4659a95a7524ad4c90d, type: 2}
   spawnPoint: {fileID: 4040882715266256}
   babbyPrefab: {fileID: 114583435410319712, guid: b5919d9f595fc4029958e6683ad66c8a,
     type: 2}
