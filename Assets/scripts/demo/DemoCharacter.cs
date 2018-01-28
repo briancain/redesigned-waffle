@@ -9,8 +9,8 @@ public class DemoCharacter : MonoBehaviour {
   [SerializeField]
   Transform idlePose;
 
-  private Rigidbody2D rb;
-  private float playerSpeed;
+  //private Rigidbody2D rb;
+  //private float playerSpeed;
 
   public void SetPose(string pose) {
     switch(pose) {
@@ -30,8 +30,8 @@ public class DemoCharacter : MonoBehaviour {
   // Use this for initialization
   void Start () {
     SetPose("idle");
-    rb = gameObject.GetComponent<Rigidbody2D>();
-    playerSpeed = 1.0f;
+    //rb = gameObject.GetComponent<Rigidbody2D>();
+    //playerSpeed = 1.0f;
   }
 
   // Update is called once per frame

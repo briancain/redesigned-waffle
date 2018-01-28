@@ -52,7 +52,7 @@ public class SceneAmbassador : MonoBehaviour {
     input.OnDevicePressX += delegate (CharacterActionz actions) {
       if (state == GameState.GAMEOVER) {
         SetState(GameState.TITLE);
-      }else{
+      } else {
         // if we're in anything other than ENDGAME,
         // and this device is NOT mapped to a player
         // assign this device to an inactive player
