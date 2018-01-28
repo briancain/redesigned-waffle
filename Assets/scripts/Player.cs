@@ -18,7 +18,7 @@ public class Player : MonoBehaviour {
   // Use this for initialization
   void Start () {
     rb = GetComponent<Rigidbody>();
-    playerSpeed = 20f;
+    playerSpeed = 10f;
     holdingEmission = false;
   }
 
@@ -27,8 +27,8 @@ public class Player : MonoBehaviour {
   }
 
   void FixedUpdate() {
-    Vector3 force = new Vector3(actions.move.X, 0.0f, actions.move.Y);
-    rb.AddForce(force * playerSpeed);
+    Vector3 movement = new Vector3(actions.move.X, 0.0f, actions.move.Y);
+    rb.velocity = movement * playerSpeed;
   }
 
   void OnCollisionEnter(Collision col) {
@@ -40,7 +40,7 @@ public class Player : MonoBehaviour {
         holdingEmission == false) {
       Destroy(col.transform.parent.gameObject);
       holdingEmission = true;
-      playerSpeed = 10f;
+      playerSpeed = 5f;
     }
   }
 }

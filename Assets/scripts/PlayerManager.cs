@@ -48,7 +48,7 @@ public class PlayerManager : MonoBehaviour {
     }
 
     // create and assign a player
-    var player = Instantiate(PlayerPrefab,new Vector3(active_players.Count * 2,2,0),Quaternion.identity,transform);
+    var player = Instantiate(PlayerPrefab,new Vector3(active_players.Count * 2,0.5f,0),Quaternion.identity,transform);
     player.OnTouchPillar += Magic;
     player.SetActionsSource(actions);
     action_mapping.Add(actions,player);
