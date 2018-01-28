@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114118664064837844}
   m_Layer: 0
   m_Name: Quad
-  m_TagString: Untagged
+  m_TagString: Emission
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,7 +55,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4767005716771412}
-  - component: {fileID: 65344727284284586}
   m_Layer: 0
   m_Name: Emission
   m_TagString: Emission
@@ -190,18 +189,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65344727284284586
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1545589899353520}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 6.5036187, y: 6.5776486, z: 5.187348}
-  m_Center: {x: -3.8037536, y: 0.17546749, z: 3.212184}
 --- !u!114 &114118664064837844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -273,7 +260,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1702758330
+  randomSeed: 685068064
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3640,7 +3627,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 670426866
+  randomSeed: -600311605
   InitialModule:
     serializedVersion: 3
     enabled: 1

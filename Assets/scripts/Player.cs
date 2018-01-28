@@ -38,7 +38,7 @@ public class Player : MonoBehaviour {
 
     if(col.gameObject.tag == "Emission" &&
         holdingEmission == false) {
-      Destroy(col.gameObject);
+      Destroy(col.transform.parent.gameObject);
       holdingEmission = true;
       playerSpeed = 10f;
     }
