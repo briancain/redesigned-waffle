@@ -6,21 +6,20 @@ using System;
 public class Player : MonoBehaviour {
 
   public Action OnTouchPillar = delegate () {};
-
-  CharacterActionz actions;
-
   public void SetActionsSource(CharacterActionz actions) {
     this.actions = actions;
   }
+  public float playerSpeed;
 
   private Rigidbody rb;
-
-  public float playerSpeed;
+  private bool holdingEmission;
+  CharacterActionz actions;
 
   // Use this for initialization
   void Start () {
     rb = GetComponent<Rigidbody>();
     playerSpeed = 20f;
+    holdingEmission = false;
   }
 
   // Update is called once per frame
@@ -35,6 +34,13 @@ public class Player : MonoBehaviour {
   void OnCollisionEnter(Collision col) {
     if(col.gameObject.tag == "Pilar") {
       OnTouchPillar();
+    }
+
+    if(col.gameObject.tag == "Emission" &&
+        holdingEmission == false) {
+      Destroy(col.gameObject);
+      holdingEmission = true;
+      playerSpeed = 10f;
     }
   }
 }
