@@ -42,7 +42,7 @@ public class Player : MonoBehaviour {
 
   // Update is called once per frame
   void Update () {
-    if (actions.action.WasPressed) {
+    if (actions.action.WasPressed && !isStunned) {
       Attack();
     }
   }
@@ -76,6 +76,7 @@ public class Player : MonoBehaviour {
 
     if(col.gameObject.tag == "Player") {
       Debug.Log("Collide with player");
+      // stun gameobject?
     }
   }
 }
