@@ -7,6 +7,7 @@ TagManager:
   - Pilar
   - Emission
   - base
+  - claw
   layers:
   - Default
   - TransparentFX

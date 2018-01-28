@@ -21,9 +21,10 @@ GameObject:
   - component: {fileID: 4668318835437326}
   - component: {fileID: 33836377382169864}
   - component: {fileID: 23929074610718416}
+  - component: {fileID: 65217114397862350}
   m_Layer: 0
   m_Name: Claw_Left_Top
-  m_TagString: Untagged
+  m_TagString: claw
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -668,9 +669,10 @@ GameObject:
   - component: {fileID: 4618964887208472}
   - component: {fileID: 33969028407375634}
   - component: {fileID: 23707705731162112}
+  - component: {fileID: 65444182178080616}
   m_Layer: 0
   m_Name: Claw_Right_Top
-  m_TagString: Untagged
+  m_TagString: claw
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2367,6 +2369,30 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65217114397862350
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1001414572964624}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.008554532, y: 0.0038214626, z: 0.004214227}
+  m_Center: {x: -0.0042140787, y: 0.00095186976, z: 0.000000012672158}
+--- !u!65 &65444182178080616
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955914003062064}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.008554538, y: 0.0038214629, z: 0.0042142277}
+  m_Center: {x: 0.0042140675, y: 0.00095187145, z: -0.000000009796}
 --- !u!65 &65730174790167688
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2378,7 +2404,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.96, z: 0}
 --- !u!82 &82195206403056206
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2503,6 +2529,11 @@ MonoBehaviour:
   animator: {fileID: 95544272058700216}
   playerSpeed: 0
   scoreSound: {fileID: 8300000, guid: d6a3af837df7a478b936f73fbe77b55e, type: 3}
+  leftclaw: {fileID: 65217114397862350}
+  rightclaw: {fileID: 65444182178080616}
+  stunTimeout: 0.5
+  normSpeed: 15
+  slowSpeed: 7
 --- !u!114 &114962625398186436
 MonoBehaviour:
   m_ObjectHideFlags: 1

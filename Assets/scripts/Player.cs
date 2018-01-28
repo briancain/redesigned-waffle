@@ -27,6 +27,11 @@ public class Player : MonoBehaviour {
   [SerializeField]
   AudioClip scoreSound;
 
+  [SerializeField]
+  BoxCollider leftclaw;
+  [SerializeField]
+  BoxCollider rightclaw;
+
   private AudioSource audio;
 
   CharacterActionz actions;
@@ -35,10 +40,20 @@ public class Player : MonoBehaviour {
 
   Vector3 movement;
 
+  float stun_time;
+  [SerializeField]
+  float stunTimeout = 0.5f;
+
+  [SerializeField]
+  float normSpeed = 20f;
+
+  [SerializeField]
+  float slowSpeed = 10f;
+
   // Use this for initialization
   void Start () {
     rb = GetComponent<Rigidbody>();
-    playerSpeed = 10f;
+    playerSpeed = normSpeed;
     holdingEmission = false;
     isStunned = false;
     audio = GetComponent<AudioSource>();
@@ -53,6 +68,12 @@ public class Player : MonoBehaviour {
 
   // Update is called once per frame
   void Update () {
+    if (isStunned) {
+      if (Time.time > stun_time + stunTimeout) {
+        isStunned = false;
+      }
+    }
+
     if (actions.action.WasPressed && !isStunned) {
       Attack();
     }
@@ -77,7 +98,13 @@ public class Player : MonoBehaviour {
     if (!isStunned) {
       movement = new Vector3(actions.move.X, 0.0f, actions.move.Y);
       rb.velocity = movement * playerSpeed;
+    }else{
+      rb.velocity = Vector3.zero;
     }
+
+    var doit = animator.GetCurrentAnimatorStateInfo(0).IsName("Attack");
+    leftclaw.enabled = doit;
+    rightclaw.enabled = doit;
   }
 
   void OnTriggerEnter(Collider col) {
@@ -86,7 +113,7 @@ public class Player : MonoBehaviour {
         if (!holdingEmission) {
           Destroy(col.transform.parent.gameObject);
           holdingEmission = true;
-          playerSpeed = 5f;
+          playerSpeed = slowSpeed;
           animator.SetBool("HasOrb",holdingEmission);
           animator.SetTrigger("PickedUpOrb");
         }
@@ -96,7 +123,7 @@ public class Player : MonoBehaviour {
         if (_base == col.transform.parent.parent.GetComponent<Base>()) {
           // drop off any emissions we're carrying
           if (holdingEmission) {
-            playerSpeed = 10f;
+            playerSpeed = normSpeed;
             holdingEmission = false;
             audio.clip = scoreSound;
             audio.Play();
@@ -107,16 +134,35 @@ public class Player : MonoBehaviour {
           // just entered the opponents' base
         }
         break;
+      case "claw":
+        
+        if (col == leftclaw || col == rightclaw) {
+          // trigger associated with our own claw, so ignore it
+          print("hit our own claw");
+          break;
+        }
+        print("hit a claw");
+        animator.SetTrigger("Hit");
+        isStunned = true;
+        stun_time = Time.time;
+
+        if (holdingEmission) {
+          // drop that thang
+          animator.SetBool("HasOrb",false);
+          holdingEmission = false;
+          playerSpeed = normSpeed;
+        }
+        break;
     }
   }
 
   void OnCollisionEnter(Collision col) {
     if(col.gameObject.tag == "Pilar") {
-      OnTouchPillar();
+      //OnTouchPillar();
     }
 
     if(col.gameObject.tag == "Player") {
-      Debug.Log("Collide with player");
+      //Debug.Log("Collide with player");
       // stun gameobject?
     }
   }
