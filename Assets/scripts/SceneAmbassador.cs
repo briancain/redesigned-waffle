@@ -11,6 +11,9 @@ public class SceneAmbassador : MonoBehaviour {
   [SerializeField]
   PlayerManager players;
 
+  [SerializeField]
+  BaseManager bases;
+
   private AudioSource audio;
   private bool m_ToggleAudio;
 
@@ -31,6 +34,7 @@ public class SceneAmbassador : MonoBehaviour {
     switch(newstate) {
       case GameState.TITLE:
         players.Reset();
+        bases.Reset();
         ShowTitle();
         break;
       case GameState.PREGAME:
@@ -79,10 +83,18 @@ public class SceneAmbassador : MonoBehaviour {
         // if we're in anything other than ENDGAME,
         // and this device is NOT mapped to a player
         // assign this device to an inactive player
-        // and active it
-        if (players.MapActions(actions)) {
-          if (state == GameState.TITLE) {
-            SetState(GameState.PLAYING);
+        // and activate it
+        if (!players.AreActionsMapped(actions)) {
+          if (players.MapActions(actions)) {
+            if (state == GameState.TITLE) {
+              SetState(GameState.PLAYING);
+            }
+
+            // we just created a new player
+            Player player = players.GetPlayer(actions);
+
+            // assign it to a base and set its color
+            player.SetBase(bases.GetBase());
           }
         }
       }

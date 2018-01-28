@@ -37,6 +37,10 @@ public class PlayerManager : MonoBehaviour {
     return action_mapping.ContainsKey(actions);
   }
 
+  public Player GetPlayer(CharacterActionz actions) {
+    return action_mapping[actions];
+  }
+
   public bool MapActions(CharacterActionz actions) {
     if (AreActionsMapped(actions)) {
       return false;

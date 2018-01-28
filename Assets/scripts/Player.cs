@@ -5,6 +5,9 @@ using System;
 
 public class Player : MonoBehaviour {
 
+  [SerializeField]
+  MeshRenderer meshRenderer;
+
   public Action OnTouchPillar = delegate () {};
   public void SetActionsSource(CharacterActionz actions) {
     this.actions = actions;
@@ -19,6 +22,8 @@ public class Player : MonoBehaviour {
 
   CharacterActionz actions;
 
+  Base _base;
+
   // Use this for initialization
   void Start () {
     rb = GetComponent<Rigidbody>();
@@ -26,6 +31,13 @@ public class Player : MonoBehaviour {
     holdingEmission = false;
     isStunned = false;
     audio = GetComponent<AudioSource>();
+  }
+
+  public void SetBase(Base _base) {
+    this._base = _base;
+    meshRenderer.material = this._base.GetPlayerMaterial();
+
+    transform.position = this._base.GetSpawnPoint().position;
   }
 
   // Update is called once per frame
