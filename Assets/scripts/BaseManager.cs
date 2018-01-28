@@ -37,6 +37,9 @@ public class BaseManager : MonoBehaviour {
 	}
 	
 	public void Reset() {
+		if (bases == null) {
+			return;
+		}
 		foreach(var _base in bases) {
 			_base.Deactivate();
 		}
