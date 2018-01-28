@@ -25,6 +25,10 @@ public class Pilar : MonoBehaviour {
   void GenerateEmission() {
     Vector3 dir = transform.position;
     float randomXPosition = Random.Range(-3.0f, 3.0f);
+    if (randomXPosition == 0f) {
+      // :D
+      randomXPosition = 1f;
+    }
     float randomZPosition = Random.Range(-3.0f, 3.0f);
     // x should be random
     dir.x += randomXPosition;

@@ -4,45 +4,45 @@ using UnityEngine;
 
 public class Base : MonoBehaviour {
 
-	[SerializeField]
-	Material baseMaterial;
+  [SerializeField]
+  Material baseMaterial;
 
-	[SerializeField]
-	Material muteMaterial;
+  [SerializeField]
+  Material muteMaterial;
 
-	[SerializeField]
-	MeshRenderer cornerMesh;
+  [SerializeField]
+  MeshRenderer cornerMesh;
 
-	[SerializeField]
-	Material playerMaterial;
+  [SerializeField]
+  Material playerMaterial;
 
-	[SerializeField]
-	Material babbyMaterial;
+  [SerializeField]
+  Material babbyMaterial;
 
-	[SerializeField]
-	Transform spawnPoint;
+  [SerializeField]
+  Transform spawnPoint;
 
-	//[SerializeField]
-	//Babby babbyPrefab;
+  //[SerializeField]
+  //Babby babbyPrefab;
 
-	public Transform GetSpawnPoint() {
-		return spawnPoint;
-	}
+  public Transform GetSpawnPoint() {
+    return spawnPoint;
+  }
 
-	public Material GetPlayerMaterial() {
-		return playerMaterial;
-	}
+  public Material GetPlayerMaterial() {
+    return playerMaterial;
+  }
 
-	public void Activate() {
-		// set base color
-		cornerMesh.material = baseMaterial;
+  public void Activate() {
+    // set base color
+    cornerMesh.material = baseMaterial;
 
-		// create babbies
-	}
-	public void Deactivate() {
-		// set mute color
-		cornerMesh.material = muteMaterial;
+    // create babbies
+  }
+  public void Deactivate() {
+    // set mute color
+    cornerMesh.material = muteMaterial;
 
-		// destroy babbies
-	}
+    // destroy babbies
+  }
 }
