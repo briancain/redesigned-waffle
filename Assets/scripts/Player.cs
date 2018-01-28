@@ -5,7 +5,7 @@ using System;
 
 public class Player : MonoBehaviour {
 
-  public Action OnTouchPillar = delegate () {};  
+  public Action OnTouchPillar = delegate () {};
 
   CharacterActionz actions;
 
@@ -19,7 +19,6 @@ public class Player : MonoBehaviour {
 
   // Use this for initialization
   void Start () {
-    
     rb = GetComponent<Rigidbody>();
     playerSpeed = 20f;
   }
