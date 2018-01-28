@@ -81,7 +81,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1195811085909042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.69, y: 0.5, z: 3.76}
+  m_LocalPosition: {x: 1.41, y: 0.5, z: 1.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4931768697927162}
@@ -185,5 +185,11 @@ MonoBehaviour:
   muteMaterial: {fileID: 2100000, guid: 550de90f496d64933b2f139b2018f161, type: 2}
   cornerMesh: {fileID: 23040400041852910}
   playerMaterial: {fileID: 2100000, guid: c0d843874a938428da3bca2105f4eece, type: 2}
-  babbyMaterial: {fileID: 0}
+  babbyMaterial: {fileID: 2100000, guid: c0d843874a938428da3bca2105f4eece, type: 2}
   spawnPoint: {fileID: 4254681969249044}
+  babbyPrefab: {fileID: 114583435410319712, guid: b5919d9f595fc4029958e6683ad66c8a,
+    type: 2}
+  babbyCount: 5
+  randomness: {x: 3, y: 0, z: 3}
+  rmin: -0.8
+  rmax: 0.8
