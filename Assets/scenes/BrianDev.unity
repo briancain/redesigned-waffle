@@ -397,6 +397,48 @@ MonoBehaviour:
   nativeInputOverrideUpdateRate: 0
   nativeInputUpdateRate: 0
   customProfiles: []
+--- !u!1001 &1018979655
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4767005716771412, guid: 186a68f7e1f37456db6a621cee464c17, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767005716771412, guid: 186a68f7e1f37456db6a621cee464c17, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767005716771412, guid: 186a68f7e1f37456db6a621cee464c17, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767005716771412, guid: 186a68f7e1f37456db6a621cee464c17, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767005716771412, guid: 186a68f7e1f37456db6a621cee464c17, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767005716771412, guid: 186a68f7e1f37456db6a621cee464c17, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767005716771412, guid: 186a68f7e1f37456db6a621cee464c17, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767005716771412, guid: 186a68f7e1f37456db6a621cee464c17, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 186a68f7e1f37456db6a621cee464c17, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1256479307
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,6 +548,12 @@ Prefab:
       propertyPath: EmissionPrefab
       value: 
       objectReference: {fileID: 114969868673337940, guid: e54c1079c46954a82990fa1508672898,
+        type: 2}
+    - target: {fileID: 114036082275915402, guid: 190d509f9f04545d8bb4fc658d23edff,
+        type: 2}
+      propertyPath: emissionObject
+      value: 
+      objectReference: {fileID: 1545589899353520, guid: 186a68f7e1f37456db6a621cee464c17,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 190d509f9f04545d8bb4fc658d23edff, type: 2}

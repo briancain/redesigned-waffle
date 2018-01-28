@@ -7,6 +7,9 @@ public class Pilar : MonoBehaviour {
   [SerializeField]
   Emission EmissionPrefab;
 
+  [SerializeField]
+  GameObject emissionObject;
+
   private float nextActionTime = 0.0f;
   private float period = 3f;
 
@@ -28,9 +31,10 @@ public class Pilar : MonoBehaviour {
     float randomZPosition = Random.Range(-3.0f, 3.0f);
     // x should be random
     dir.x += randomXPosition;
-    dir.y += 2.5f;
+    dir.y += 1.0f;
     dir.z += randomZPosition;
 
-    Instantiate(EmissionPrefab, dir, Quaternion.identity, transform);
+    Quaternion spawnRotation = Quaternion.Euler(90,0,0);
+    Instantiate(emissionObject, dir, spawnRotation, transform);
   }
 }
