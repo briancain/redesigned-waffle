@@ -18,6 +18,9 @@ public class Player : MonoBehaviour {
   private bool holdingEmission;
   private bool isStunned;
 
+  [SerializeField]
+  AudioClip scoreSound;
+
   private AudioSource audio;
 
   CharacterActionz actions;
@@ -58,11 +61,28 @@ public class Player : MonoBehaviour {
   }
 
   void OnTriggerEnter(Collider col) {
-    if(col.gameObject.tag == "Emission" &&
-        holdingEmission == false) {
-      Destroy(col.transform.parent.gameObject);
-      holdingEmission = true;
-      playerSpeed = 5f;
+    switch(col.gameObject.tag) {
+      case "Emission":
+        if (holdingEmission) {
+          Destroy(col.transform.parent.gameObject);
+          holdingEmission = true;
+          playerSpeed = 5f;
+        }
+        break;
+      case "base":
+        // is this our base?
+        if (_base == col.transform.parent.GetComponent<Base>()) {
+          // drop off any emissions we're carrying
+          if (holdingEmission) {
+            playerSpeed = 10f;
+            holdingEmission = false;
+            audio.clip = scoreSound;
+            audio.Play();
+          }
+        }else{
+          // just entered the opponents' base
+        }
+        break;
     }
   }
 
