@@ -10,8 +10,13 @@ public class Pilar : MonoBehaviour {
   private float nextActionTime = 0.0f;
   private float period = 10f;
 
+  private AudioSource audio;
+  [SerializeField]
+  AudioClip emissionCreateClip;
+
   // Use this for initialization
   void Start () {
+    audio = GetComponent<AudioSource>();
   }
   // Update is called once per frame
   void Update () {
@@ -37,5 +42,7 @@ public class Pilar : MonoBehaviour {
 
     Quaternion spawnRotation = Quaternion.Euler(90,0,0);
     Instantiate(emissionObject, dir, spawnRotation, transform);
+    // Here-2 or here-3
+    audio.PlayOneShot(emissionCreateClip, 1f);
   }
 }

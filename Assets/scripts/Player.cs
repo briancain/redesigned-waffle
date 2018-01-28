@@ -34,7 +34,9 @@ public class Player : MonoBehaviour {
 
   private AudioSource audio;
   [SerializeField]
-  AudioClip emissionPickup;
+  AudioClip emissionPickupClip;
+  [SerializeField]
+  AudioClip stunnedClip;
 
   CharacterActionz actions;
 
@@ -115,7 +117,7 @@ public class Player : MonoBehaviour {
           playerSpeed = slowSpeed;
           animator.SetBool("HasOrb",holdingEmission);
           animator.SetTrigger("PickedUpOrb");
-          audio.PlayOneShot(emissionPickup, 1f);
+          audio.PlayOneShot(emissionPickupClip, 1f);
         }
         break;
       case "base":
@@ -142,6 +144,7 @@ public class Player : MonoBehaviour {
         }
         print("hit a claw");
         animator.SetTrigger("Hit");
+        audio.PlayOneShot(stunnedClip, 5f);
         isStunned = true;
         stun_time = Time.time;
 

@@ -2531,7 +2531,8 @@ MonoBehaviour:
   scoreSound: {fileID: 8300000, guid: d6a3af837df7a478b936f73fbe77b55e, type: 3}
   leftclaw: {fileID: 65217114397862350}
   rightclaw: {fileID: 65444182178080616}
-  emissionPickup: {fileID: 8300000, guid: 545a386e1aafd4f5e99141079d954994, type: 3}
+  emissionPickupClip: {fileID: 8300000, guid: 545a386e1aafd4f5e99141079d954994, type: 3}
+  stunnedClip: {fileID: 8300000, guid: e528e569c9a4b45e6b88f512e3e7ffe2, type: 3}
   stunTimeout: 0.5
   normSpeed: 15
   slowSpeed: 7

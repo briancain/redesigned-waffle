@@ -329,7 +329,7 @@ MonoBehaviour:
   input: {fileID: 580462119}
   players: {fileID: 1908882856}
   bases: {fileID: 1283598190}
-  m_Play: 0
+  m_Play: 1
 --- !u!4 &619099693
 Transform:
   m_ObjectHideFlags: 0
@@ -363,7 +363,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
