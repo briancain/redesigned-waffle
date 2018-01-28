@@ -31,7 +31,7 @@ public class InputManager : MonoBehaviour {
   }
 
   void OnDeviceAttached(InputDevice device) {
-    print("device attached: " + device.Name);
+    //print("device attached: " + device.Name);
     devices.Add(device);
 
     var actionz = new CharacterActionz();
@@ -65,7 +65,7 @@ public class InputManager : MonoBehaviour {
   }
 
   void OnDeviceDetached(InputDevice device) {
-    print("device detached: " + device.Name);
+    //print("device detached: " + device.Name);
     devices.Remove(device);
 
   }
