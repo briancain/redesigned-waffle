@@ -45,19 +45,22 @@ public class Player : MonoBehaviour {
 
   // Update is called once per frame
   void Update () {
-    if (actions.action.WasPressed) {
+    if (actions.action.WasPressed && !isStunned) {
       Attack();
     }
   }
 
   void Attack() {
     // Animate rig to swing
-    // check bool if attacking oncollisionenter?
+    // play melee sound
+    Debug.Log("Attacking");
   }
 
   void FixedUpdate() {
-    Vector3 movement = new Vector3(actions.move.X, 0.0f, actions.move.Y);
-    rb.velocity = movement * playerSpeed;
+    if (!isStunned) {
+      Vector3 movement = new Vector3(actions.move.X, 0.0f, actions.move.Y);
+      rb.velocity = movement * playerSpeed;
+    }
   }
 
   void OnTriggerEnter(Collider col) {
@@ -87,10 +90,13 @@ public class Player : MonoBehaviour {
   }
 
   void OnCollisionEnter(Collision col) {
-    print("collided with: " + col.gameObject.tag + " - " + col.gameObject.name);
-
     if(col.gameObject.tag == "Pilar") {
       OnTouchPillar();
+    }
+
+    if(col.gameObject.tag == "Player") {
+      Debug.Log("Collide with player");
+      // stun gameobject?
     }
   }
 }
