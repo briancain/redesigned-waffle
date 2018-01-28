@@ -58,6 +58,8 @@ public class Player : MonoBehaviour {
   }
 
   void OnCollisionEnter(Collision col) {
+    print("collided with: " + col.gameObject.tag + " - " + col.gameObject.name);
+
     if(col.gameObject.tag == "Pilar") {
       OnTouchPillar();
     }
