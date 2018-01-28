@@ -14,6 +14,9 @@ public class Player : MonoBehaviour {
   private Rigidbody rb;
   private bool holdingEmission;
   private bool isStunned;
+
+  private AudioSource audio;
+
   CharacterActionz actions;
 
   // Use this for initialization
@@ -22,6 +25,7 @@ public class Player : MonoBehaviour {
     playerSpeed = 10f;
     holdingEmission = false;
     isStunned = false;
+    audio = GetComponent<AudioSource>();
   }
 
   // Update is called once per frame
