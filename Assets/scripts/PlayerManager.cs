@@ -21,12 +21,16 @@ public class PlayerManager : MonoBehaviour {
   }
 
   public void Reset() {
-    action_mapping.Clear();
-
-    foreach(var player in active_players) {
-      Destroy(player.gameObject);
+    if (action_mapping != null) {
+      action_mapping.Clear();
     }
-    active_players.Clear();
+
+    if (active_players != null) {
+      foreach(var player in active_players) {
+        Destroy(player.gameObject);
+      }
+      active_players.Clear();
+    }
   }
 
   public bool AreActionsMapped(CharacterActionz actions) {
