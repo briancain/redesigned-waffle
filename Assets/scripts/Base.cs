@@ -61,6 +61,7 @@ public class Base : MonoBehaviour {
         Random.Range(rmin,rmax) * randomness.x,
         Random.Range(rmin,rmax) * randomness.y,
         Random.Range(rmin,rmax) * randomness.z),Quaternion.identity,transform);
+      babby._base = this;
       babbies.Add(babby);
     }
   }
