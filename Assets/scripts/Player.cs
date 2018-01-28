@@ -13,6 +13,7 @@ public class Player : MonoBehaviour {
 
   private Rigidbody rb;
   private bool holdingEmission;
+  private bool isStunned;
   CharacterActionz actions;
 
   // Use this for initialization
@@ -20,10 +21,19 @@ public class Player : MonoBehaviour {
     rb = GetComponent<Rigidbody>();
     playerSpeed = 10f;
     holdingEmission = false;
+    isStunned = false;
   }
 
   // Update is called once per frame
   void Update () {
+    if (actions.action.WasPressed) {
+      Attack();
+    }
+  }
+
+  void Attack() {
+    // Animate rig to swing
+    // check bool if attacking oncollisionenter?
   }
 
   void FixedUpdate() {
