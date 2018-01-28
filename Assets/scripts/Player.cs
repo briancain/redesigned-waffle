@@ -57,18 +57,20 @@ public class Player : MonoBehaviour {
     rb.velocity = movement * playerSpeed;
   }
 
-  void OnCollisionEnter(Collision col) {
-    print("collided with: " + col.gameObject.tag + " - " + col.gameObject.name);
-
-    if(col.gameObject.tag == "Pilar") {
-      OnTouchPillar();
-    }
-
+  void OnTriggerEnter(Collider col) {
     if(col.gameObject.tag == "Emission" &&
         holdingEmission == false) {
       Destroy(col.transform.parent.gameObject);
       holdingEmission = true;
       playerSpeed = 5f;
+    }
+  }
+
+  void OnCollisionEnter(Collision col) {
+    print("collided with: " + col.gameObject.tag + " - " + col.gameObject.name);
+
+    if(col.gameObject.tag == "Pilar") {
+      OnTouchPillar();
     }
   }
 }
