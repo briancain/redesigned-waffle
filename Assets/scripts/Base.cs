@@ -22,8 +22,6 @@ public class Base : MonoBehaviour {
   [SerializeField]
   Transform spawnPoint;
 
-  //[SerializeField]
-  //Babby babbyPrefab;
   [SerializeField]
   Babby babbyPrefab;
 
@@ -39,6 +37,7 @@ public class Base : MonoBehaviour {
   float rmax;
 
   List<Babby> babbies;
+
 
   public Transform GetSpawnPoint() {
     return spawnPoint;
@@ -65,6 +64,7 @@ public class Base : MonoBehaviour {
       babbies.Add(babby);
     }
   }
+
   public void Deactivate() {
     // set mute color
     cornerMesh.material = muteMaterial;
