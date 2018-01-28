@@ -155,10 +155,8 @@ public class Player : MonoBehaviour {
       case "claw":
         if (col == leftclaw || col == rightclaw) {
           // trigger associated with our own claw, so ignore it
-          print("hit our own claw");
           break;
         }
-        print("hit a claw");
         animator.SetTrigger("Hit");
         audio.PlayOneShot(stunnedClip, 5f);
         isStunned = true;
