@@ -66,7 +66,7 @@ public class Player : MonoBehaviour {
   void OnTriggerEnter(Collider col) {
     switch(col.gameObject.tag) {
       case "Emission":
-        if (holdingEmission) {
+        if (!holdingEmission) {
           Destroy(col.transform.parent.gameObject);
           holdingEmission = true;
           playerSpeed = 5f;
@@ -74,7 +74,7 @@ public class Player : MonoBehaviour {
         break;
       case "base":
         // is this our base?
-        if (_base == col.transform.parent.GetComponent<Base>()) {
+        if (_base == col.transform.parent.parent.GetComponent<Base>()) {
           // drop off any emissions we're carrying
           if (holdingEmission) {
             playerSpeed = 10f;
