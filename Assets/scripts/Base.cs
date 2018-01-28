@@ -64,6 +64,7 @@ public class Base : MonoBehaviour {
 			babbies.Add(babby);
 		}
 	}
+	
 	public void Deactivate() {
 		// set mute color
 		cornerMesh.material = muteMaterial;

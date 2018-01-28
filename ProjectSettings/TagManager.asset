@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pilar
   - Emission
+  - base
   layers:
   - Default
   - TransparentFX
