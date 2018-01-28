@@ -66,6 +66,13 @@ public class SceneAmbassador : MonoBehaviour {
       audio.Stop();
       m_ToggleAudio = false;
     }
+
+    if (state == GameState.PLAYING) {
+      Player endGame = players.checkPlayerScore();
+      if (endGame != null) {
+        SetState(GameState.GAMEOVER);
+      }
+    }
   }
 
   void initVars() {

@@ -24,6 +24,10 @@ public class Player : MonoBehaviour {
   private bool holdingEmission;
   private bool isStunned;
 
+  private float totalScore;
+  [SerializeField]
+  float maxScore;
+
   [SerializeField]
   AudioClip scoreSound;
 
@@ -59,10 +63,12 @@ public class Player : MonoBehaviour {
   // Use this for initialization
   void Start () {
     rb = GetComponent<Rigidbody>();
+    audio = GetComponent<AudioSource>();
+
     playerSpeed = normSpeed;
     holdingEmission = false;
     isStunned = false;
-    audio = GetComponent<AudioSource>();
+    totalScore = 0f;
   }
 
   public void SetBase(Base _base) {
@@ -70,6 +76,10 @@ public class Player : MonoBehaviour {
     meshRenderer.material = this._base.GetPlayerMaterial();
 
     transform.position = this._base.GetSpawnPoint().position;
+  }
+
+  public bool fullBabbies() {
+    return totalScore == maxScore;
   }
 
   // Update is called once per frame
@@ -136,6 +146,7 @@ public class Player : MonoBehaviour {
             audio.Play();
             animator.SetBool("HasOrb",false);
             animator.SetTrigger("DroppedOrbOff");
+            totalScore += 1f;
           }
         }else{
           // just entered the opponents' base
