@@ -33,6 +33,8 @@ public class Player : MonoBehaviour {
   BoxCollider rightclaw;
 
   private AudioSource audio;
+  [SerializeField]
+  AudioClip emissionPickup;
 
   CharacterActionz actions;
 
@@ -83,9 +85,6 @@ public class Player : MonoBehaviour {
     if (movement.magnitude > 0) {
       transform.rotation = Quaternion.LookRotation(-1f * movement.normalized);
     }
-
-
-    
   }
 
   void Attack() {
@@ -116,6 +115,7 @@ public class Player : MonoBehaviour {
           playerSpeed = slowSpeed;
           animator.SetBool("HasOrb",holdingEmission);
           animator.SetTrigger("PickedUpOrb");
+          audio.PlayOneShot(emissionPickup, 1f);
         }
         break;
       case "base":
@@ -135,7 +135,6 @@ public class Player : MonoBehaviour {
         }
         break;
       case "claw":
-        
         if (col == leftclaw || col == rightclaw) {
           // trigger associated with our own claw, so ignore it
           print("hit our own claw");
