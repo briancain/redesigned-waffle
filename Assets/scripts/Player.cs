@@ -16,6 +16,7 @@ public class Player : MonoBehaviour {
 
   private Rigidbody rb;
   private bool holdingEmission;
+  private bool isStunned;
   CharacterActionz actions;
 
   Base _base;
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour {
     rb = GetComponent<Rigidbody>();
     playerSpeed = 10f;
     holdingEmission = false;
+    isStunned = false;
   }
 
   public void SetBase(Base _base) {
@@ -36,6 +38,14 @@ public class Player : MonoBehaviour {
 
   // Update is called once per frame
   void Update () {
+    if (actions.action.WasPressed) {
+      Attack();
+    }
+  }
+
+  void Attack() {
+    // Animate rig to swing
+    // check bool if attacking oncollisionenter?
   }
 
   void FixedUpdate() {

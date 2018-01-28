@@ -14,6 +14,12 @@ public class SceneAmbassador : MonoBehaviour {
   [SerializeField]
   BaseManager bases;
 
+  private AudioSource audio;
+  private bool m_ToggleAudio;
+
+  [SerializeField]
+  bool m_Play;
+
   enum GameState {
     TITLE,
     PREGAME,
@@ -44,12 +50,29 @@ public class SceneAmbassador : MonoBehaviour {
   }
 
   void Awake () {
-
     // initialize bindings
+    initVars();
     InitPlayers();
     InitInput();
 
     SetState(GameState.TITLE);
+  }
+
+  void Update() {
+    if (m_Play == true && m_ToggleAudio == true) {
+      audio.Play();
+      m_ToggleAudio = false;
+    } else if (m_Play == false && m_ToggleAudio == true) {
+      audio.Stop();
+      m_ToggleAudio = false;
+    }
+  }
+
+  void initVars() {
+    audio = GetComponent<AudioSource>();
+    // TODO: Uncomment me before shipping pls :D
+    //m_Play = true;
+    m_ToggleAudio = true;
   }
 
   void InitInput() {
