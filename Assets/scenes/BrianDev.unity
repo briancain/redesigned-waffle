@@ -323,6 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 580462119}
   players: {fileID: 1908882856}
+  bases: {fileID: 0}
   m_Play: 0
 --- !u!4 &619099693
 Transform:
