@@ -1,0 +1,435 @@
+fileFormatVersion: 2
+guid: b549f017873606f40b0f2e644aa18ab1
+timeCreated: 1517159109
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Antenna_Left
+    100002: Antenna_Right
+    100004: Claw_Left
+    100006: Claw_Left_Bottom
+    100008: Claw_Left_Top
+    100010: Claw_Right
+    100012: Claw_Right_Bottom
+    100014: Claw_Right_Top
+    100016: Dome
+    100018: Left_Arm
+    100020: Left_Elbow
+    100022: Left_Lower_Arm
+    100024: Left_Shoulder
+    100026: Left_Upper_Arm
+    100028: pCylinder1
+    100030: pCylinder1 1
+    100032: pSphere3
+    100034: pSphere3 1
+    100036: Right_Arm
+    100038: Right_Elbow
+    100040: Right_Lower_Arm
+    100042: Right_Shoulder
+    100044: Right_Upper_Arm
+    100046: Screen_Face
+    100048: TV_Set
+    100050: //RootNode
+    100052: Wing_Left
+    100054: Wing_Left_Mesh
+    100056: Wing_Left_Socket
+    100058: Wing_Right
+    100060: Wing_Right_Mesh
+    100062: Wing_Right_Socket
+    100064: Wrist_Left
+    100066: Wrist_Right
+    400000: Antenna_Left
+    400002: Antenna_Right
+    400004: Claw_Left
+    400006: Claw_Left_Bottom
+    400008: Claw_Left_Top
+    400010: Claw_Right
+    400012: Claw_Right_Bottom
+    400014: Claw_Right_Top
+    400016: Dome
+    400018: Left_Arm
+    400020: Left_Elbow
+    400022: Left_Lower_Arm
+    400024: Left_Shoulder
+    400026: Left_Upper_Arm
+    400028: pCylinder1
+    400030: pCylinder1 1
+    400032: pSphere3
+    400034: pSphere3 1
+    400036: Right_Arm
+    400038: Right_Elbow
+    400040: Right_Lower_Arm
+    400042: Right_Shoulder
+    400044: Right_Upper_Arm
+    400046: Screen_Face
+    400048: TV_Set
+    400050: //RootNode
+    400052: Wing_Left
+    400054: Wing_Left_Mesh
+    400056: Wing_Left_Socket
+    400058: Wing_Right
+    400060: Wing_Right_Mesh
+    400062: Wing_Right_Socket
+    400064: Wrist_Left
+    400066: Wrist_Right
+    2100000: lambert1
+    2300000: Claw_Left_Bottom
+    2300002: Claw_Left_Top
+    2300004: Claw_Right_Bottom
+    2300006: Claw_Right_Top
+    2300008: Dome
+    2300010: Left_Elbow
+    2300012: Left_Lower_Arm
+    2300014: Left_Shoulder
+    2300016: Left_Upper_Arm
+    2300018: pCylinder1
+    2300020: pCylinder1 1
+    2300022: pSphere3
+    2300024: pSphere3 1
+    2300026: Right_Elbow
+    2300028: Right_Lower_Arm
+    2300030: Right_Shoulder
+    2300032: Right_Upper_Arm
+    2300034: Screen_Face
+    2300036: TV_Set
+    2300038: Wing_Left_Mesh
+    2300040: Wing_Left_Socket
+    2300042: Wing_Right_Mesh
+    2300044: Wing_Right_Socket
+    2300046: Wrist_Left
+    2300048: Wrist_Right
+    3300000: Claw_Left_Bottom
+    3300002: Claw_Left_Top
+    3300004: Claw_Right_Bottom
+    3300006: Claw_Right_Top
+    3300008: Dome
+    3300010: Left_Elbow
+    3300012: Left_Lower_Arm
+    3300014: Left_Shoulder
+    3300016: Left_Upper_Arm
+    3300018: pCylinder1
+    3300020: pCylinder1 1
+    3300022: pSphere3
+    3300024: pSphere3 1
+    3300026: Right_Elbow
+    3300028: Right_Lower_Arm
+    3300030: Right_Shoulder
+    3300032: Right_Upper_Arm
+    3300034: Screen_Face
+    3300036: TV_Set
+    3300038: Wing_Left_Mesh
+    3300040: Wing_Left_Socket
+    3300042: Wing_Right_Mesh
+    3300044: Wing_Right_Socket
+    3300046: Wrist_Left
+    3300048: Wrist_Right
+    4300000: Wing_Right_Mesh
+    4300002: Wing_Right_Socket
+    4300004: Wing_Left_Mesh
+    4300006: Wing_Left_Socket
+    4300008: Dome
+    4300010: pSphere3
+    4300012: pCylinder1
+    4300014: pSphere3
+    4300016: pCylinder1
+    4300018: TV_Set
+    4300020: Screen_Face
+    4300022: Right_Shoulder
+    4300024: Right_Upper_Arm
+    4300026: Right_Elbow
+    4300028: Right_Lower_Arm
+    4300030: Wrist_Right
+    4300032: Claw_Right_Top
+    4300034: Claw_Right_Bottom
+    4300036: Left_Shoulder
+    4300038: Left_Upper_Arm
+    4300040: Left_Elbow
+    4300042: Left_Lower_Arm
+    4300044: Wrist_Left
+    4300046: Claw_Left_Top
+    4300048: Claw_Left_Bottom
+    7400000: Idle
+    7400002: Attack
+    7400004: Hit
+    7400006: Shoot
+    7400008: Put Orb Down
+    7400010: Grab Orb
+    7400012: Fly With Orb
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 60
+      lastFrame: 180
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Attack
+      takeName: Take 001
+      firstFrame: 181
+      lastFrame: 300
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hit
+      takeName: Take 001
+      firstFrame: 301
+      lastFrame: 360
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Shoot
+      takeName: Take 001
+      firstFrame: 361
+      lastFrame: 420
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Grab Orb
+      takeName: Take 001
+      firstFrame: 421
+      lastFrame: 451
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fly With Orb
+      takeName: Take 001
+      firstFrame: 451
+      lastFrame: 550
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Put Orb Down
+      takeName: Take 001
+      firstFrame: 551
+      lastFrame: 580
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

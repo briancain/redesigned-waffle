@@ -8,6 +8,12 @@ public class Player : MonoBehaviour {
   [SerializeField]
   MeshRenderer meshRenderer;
 
+  [SerializeField]
+  Transform holdplace;
+
+  [SerializeField]
+  Animator animator;
+
   public Action OnTouchPillar = delegate () {};
   public void SetActionsSource(CharacterActionz actions) {
     this.actions = actions;
@@ -26,6 +32,8 @@ public class Player : MonoBehaviour {
   CharacterActionz actions;
 
   Base _base;
+
+  Vector3 movement;
 
   // Use this for initialization
   void Start () {
@@ -48,17 +56,26 @@ public class Player : MonoBehaviour {
     if (actions.action.WasPressed && !isStunned) {
       Attack();
     }
+
+    holdplace.gameObject.SetActive(holdingEmission);
+
+    if (movement.magnitude > 0) {
+      transform.rotation = Quaternion.LookRotation(-1f * movement.normalized);
+    }
+
+
+    
   }
 
   void Attack() {
     // Animate rig to swing
     // play melee sound
-    Debug.Log("Attacking");
+    animator.SetTrigger("Attack");
   }
 
   void FixedUpdate() {
     if (!isStunned) {
-      Vector3 movement = new Vector3(actions.move.X, 0.0f, actions.move.Y);
+      movement = new Vector3(actions.move.X, 0.0f, actions.move.Y);
       rb.velocity = movement * playerSpeed;
     }
   }
@@ -70,6 +87,8 @@ public class Player : MonoBehaviour {
           Destroy(col.transform.parent.gameObject);
           holdingEmission = true;
           playerSpeed = 5f;
+          animator.SetBool("HasOrb",holdingEmission);
+          animator.SetTrigger("PickedUpOrb");
         }
         break;
       case "base":
@@ -81,6 +100,8 @@ public class Player : MonoBehaviour {
             holdingEmission = false;
             audio.clip = scoreSound;
             audio.Play();
+            animator.SetBool("HasOrb",false);
+            animator.SetTrigger("DroppedOrbOff");
           }
         }else{
           // just entered the opponents' base
