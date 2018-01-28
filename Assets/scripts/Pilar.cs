@@ -28,7 +28,7 @@ public class Pilar : MonoBehaviour {
     float randomZPosition = Random.Range(-3.0f, 3.0f);
     // x should be random
     dir.x += randomXPosition;
-    dir.y += 1.0f;
+    dir.y = 1.5f;
     dir.z += randomZPosition;
 
     Quaternion spawnRotation = Quaternion.Euler(90,0,0);
