@@ -8,7 +8,7 @@ public class Pilar : MonoBehaviour {
   GameObject emissionObject;
 
   private float nextActionTime = 0.0f;
-  private float period = 3f;
+  private float period = 10f;
 
   // Use this for initialization
   void Start () {
@@ -28,7 +28,7 @@ public class Pilar : MonoBehaviour {
     float randomZPosition = Random.Range(-3.0f, 3.0f);
     // x should be random
     dir.x += randomXPosition;
-    dir.y = 1.5f;
+    dir.y = 1.3f;
     dir.z += randomZPosition;
 
     Quaternion spawnRotation = Quaternion.Euler(90,0,0);
