@@ -12,8 +12,10 @@ public class SceneAmbassador : MonoBehaviour {
   PlayerManager players;
 
   private AudioSource audio;
-  private bool m_Play;
   private bool m_ToggleAudio;
+
+  [SerializeField]
+  bool m_Play;
 
   enum GameState {
     TITLE,
@@ -64,7 +66,8 @@ public class SceneAmbassador : MonoBehaviour {
 
   void initVars() {
     audio = GetComponent<AudioSource>();
-    m_Play = true;
+    // TODO: Uncomment me before shipping pls :D
+    //m_Play = true;
     m_ToggleAudio = true;
   }
 

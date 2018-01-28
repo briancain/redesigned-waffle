@@ -323,6 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 580462119}
   players: {fileID: 1908882856}
+  m_Play: 0
 --- !u!4 &619099693
 Transform:
   m_ObjectHideFlags: 0
@@ -350,7 +351,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 41229fbf893954b418555d31dfe72d54, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 36b94cfceebfb463a8667463aa138f38, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
