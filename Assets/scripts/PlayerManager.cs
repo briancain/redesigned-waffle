@@ -33,6 +33,15 @@ public class PlayerManager : MonoBehaviour {
     }
   }
 
+  public Player checkPlayerScore() {
+    foreach(var player in active_players) {
+      if (player.fullBabbies()) {
+        return player;
+      }
+    }
+    return null;
+  }
+
   public bool AreActionsMapped(CharacterActionz actions) {
     return action_mapping.ContainsKey(actions);
   }

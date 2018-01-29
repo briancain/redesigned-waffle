@@ -9,7 +9,7 @@ public class OffsetUVRandomly : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rend = GetComponent<Renderer>();
-        Debug.Log(Random.Range(0,1.0f));
+        //Debug.Log(Random.Range(0,1.0f));
 	}
 	
 	// Update is called once per frame
