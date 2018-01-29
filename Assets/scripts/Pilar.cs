@@ -14,6 +14,9 @@ public class Pilar : MonoBehaviour {
   [SerializeField]
   AudioClip emissionCreateClip;
 
+  [SerializeField]
+  ParticleSystem particleAnimator;
+
   // Use this for initialization
   void Start () {
     audio = GetComponent<AudioSource>();
@@ -40,9 +43,10 @@ public class Pilar : MonoBehaviour {
     dir.y = 1.3f;
     dir.z += randomZPosition;
 
+    particleAnimator.Play();
+
     Quaternion spawnRotation = Quaternion.Euler(90,0,0);
     Instantiate(emissionObject, dir, spawnRotation, transform);
-    // Here-2 or here-3
     audio.PlayOneShot(emissionCreateClip, 1f);
   }
 }
