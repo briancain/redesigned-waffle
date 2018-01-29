@@ -11,11 +11,8 @@ public class Title : MonoBehaviour {
 	[SerializeField]
 	Vector3 endpos;
 
+	[SerializeField]
 	Vector3 showpos;
-
-	void Awake() {
-		showpos = transform.position;
-	}
 
 	public void Show() {
 		transform.position = startpos;
