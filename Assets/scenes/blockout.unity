@@ -961,6 +961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startpos: {x: -19.068, y: -5, z: 10}
   endpos: {x: -19.068, y: -10, z: -2}
+  showpos: {x: -19.068, y: 2, z: -2}
 --- !u!1001 &1130949384
 Prefab:
   m_ObjectHideFlags: 0
@@ -1044,6 +1045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startpos: {x: -15.5, y: -5, z: -2}
   endpos: {x: -15.5, y: 100, z: 10}
+  showpos: {x: -15.5, y: 5, z: 3.6}
 --- !u!1 &1256479307
 GameObject:
   m_ObjectHideFlags: 0
