@@ -14,6 +14,12 @@ public class SceneAmbassador : MonoBehaviour {
   [SerializeField]
   BaseManager bases;
 
+  [SerializeField]
+  Title title;
+
+  [SerializeField]
+  Title gameover;
+
   private AudioSource audio;
   private bool m_ToggleAudio;
 
@@ -31,19 +37,26 @@ public class SceneAmbassador : MonoBehaviour {
   void SetState(GameState newstate) {
     print(newstate.ToString());
 
+    if (state == GameState.GAMEOVER) {
+      //gameover.Hide();
+    }
+
     switch(newstate) {
       case GameState.TITLE:
         players.Reset();
         bases.Reset();
         ShowTitle();
+        gameover.Hide();
         break;
       case GameState.PREGAME:
-        HideTitle();
+        
         break;
       case GameState.PLAYING:
-      break;
+        HideTitle();
+        break;
       case GameState.GAMEOVER:
-      break;
+        gameover.Show();
+        break;
     }
 
     state = newstate;
@@ -109,9 +122,9 @@ public class SceneAmbassador : MonoBehaviour {
   }
 
   void ShowTitle() {
-
+    title.Show();
   }
   void HideTitle() {
-
+    title.Hide();
   }
 }
