@@ -1,3 +1,3 @@
 # Global Game Jam 2018
 
-Work In Progress.
+2-4 player local multiplayer video game in Unity3D
