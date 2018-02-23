@@ -20,6 +20,13 @@ public class SceneAmbassador : MonoBehaviour {
   [SerializeField]
   Title gameover;
 
+  [SerializeField]
+  Pilar pilar;
+
+  [SerializeField]
+  GameObject titleObj;
+  private GameObject titleObjClone;
+
   private AudioSource audio;
   private bool m_ToggleAudio;
 
@@ -27,6 +34,7 @@ public class SceneAmbassador : MonoBehaviour {
   bool m_Play;
 
   enum GameState {
+    PRETITLE,
     TITLE,
     PREGAME,
     PLAYING,
@@ -42,19 +50,24 @@ public class SceneAmbassador : MonoBehaviour {
     }
 
     switch(newstate) {
+      case GameState.PRETITLE:
+        StartTitle();
+        break;
       case GameState.TITLE:
+        DestroyTitle();
         players.Reset();
         bases.Reset();
         ShowTitle();
         gameover.Hide();
         break;
       case GameState.PREGAME:
-        
         break;
       case GameState.PLAYING:
         HideTitle();
+        pilar.startTransmissions();
         break;
       case GameState.GAMEOVER:
+        pilar.stopTransmissions();
         gameover.Show();
         break;
     }
@@ -68,7 +81,7 @@ public class SceneAmbassador : MonoBehaviour {
     InitPlayers();
     InitInput();
 
-    SetState(GameState.TITLE);
+    SetState(GameState.PRETITLE);
   }
 
   void Update() {
@@ -107,15 +120,21 @@ public class SceneAmbassador : MonoBehaviour {
         // and activate it
         if (!players.AreActionsMapped(actions)) {
           if (players.MapActions(actions)) {
-            if (state == GameState.TITLE) {
+            if (state == GameState.PRETITLE) {
+              SetState(GameState.TITLE);
+            }
+            else if (state == GameState.TITLE) {
               SetState(GameState.PLAYING);
             }
 
-            // we just created a new player
-            Player player = players.GetPlayer(actions);
+            // this might be screwy
+            if (state == GameState.PLAYING) {
+              // we just created a new player
+              Player player = players.GetPlayer(actions);
 
-            // assign it to a base and set its color
-            player.SetBase(bases.GetBase());
+              // assign it to a base and set its color
+              player.SetBase(bases.GetBase());
+            }
           }
         }
       }
@@ -126,6 +145,14 @@ public class SceneAmbassador : MonoBehaviour {
     players.OnMagicEvent += delegate() {
       SetState(GameState.GAMEOVER);
     };
+  }
+
+  void StartTitle() {
+    titleObjClone = (GameObject)Instantiate(titleObj, new Vector3(0, 0, 0), Quaternion.identity);
+  }
+
+  void DestroyTitle() {
+    Destroy(titleObjClone);
   }
 
   void ShowTitle() {

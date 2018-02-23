@@ -2537,7 +2537,7 @@ MonoBehaviour:
   attackClip: {fileID: 8300000, guid: 023cbc518d3944cd4afc3e7f2b260e67, type: 3}
   stunTimeout: 0.5
   normSpeed: 15
-  slowSpeed: 7
+  slowSpeed: 8.5
 --- !u!114 &114962625398186436
 MonoBehaviour:
   m_ObjectHideFlags: 1

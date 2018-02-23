@@ -118,6 +118,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1366023732661996, guid: 190d509f9f04545d8bb4fc658d23edff,
     type: 2}
   m_PrefabInternal: {fileID: 1334934467}
+--- !u!114 &49717204 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114036082275915402, guid: 190d509f9f04545d8bb4fc658d23edff,
+    type: 2}
+  m_PrefabInternal: {fileID: 1334934467}
+  m_Script: {fileID: 11500000, guid: 5d055de827451497ca42c00e98555e20, type: 3}
 --- !u!82 &49717208
 AudioSource:
   m_ObjectHideFlags: 0
@@ -504,6 +510,8 @@ MonoBehaviour:
   bases: {fileID: 1283598190}
   title: {fileID: 1130949386}
   gameover: {fileID: 1115547934}
+  pilar: {fileID: 49717204}
+  titleObj: {fileID: 1613196880696306, guid: 320d9f8b7ed611648a517d1fc4f7d898, type: 2}
   m_Play: 1
 --- !u!4 &619099693
 Transform:

@@ -8,7 +8,7 @@ public class Pilar : MonoBehaviour {
   GameObject emissionObject;
 
   private float nextActionTime = 0.0f;
-  private float period = 10f;
+  private float period = 5f;
 
   private AudioSource audio;
   [SerializeField]
@@ -17,6 +17,16 @@ public class Pilar : MonoBehaviour {
   [SerializeField]
   ParticleSystem particleAnimator;
 
+  private bool generateTransmissions;
+
+  public void startTransmissions() {
+    generateTransmissions = true;
+  }
+
+  public void stopTransmissions() {
+    generateTransmissions = false;
+  }
+
   // Use this for initialization
   void Start () {
     audio = GetComponent<AudioSource>();
@@ -24,7 +34,7 @@ public class Pilar : MonoBehaviour {
   // Update is called once per frame
   void Update () {
     // Every few seconds, generate an Emission
-    if (Time.time > nextActionTime ) {
+    if (Time.time > nextActionTime && generateTransmissions) {
         nextActionTime += period;
         GenerateEmission();
      }
