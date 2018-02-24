@@ -1460,6 +1460,11 @@ Prefab:
       propertyPath: particleAnimator
       value: 
       objectReference: {fileID: 1397578183}
+    - target: {fileID: 114036082275915402, guid: 190d509f9f04545d8bb4fc658d23edff,
+        type: 2}
+      propertyPath: period
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 190d509f9f04545d8bb4fc658d23edff, type: 2}
   m_IsPrefabParent: 0

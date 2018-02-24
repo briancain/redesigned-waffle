@@ -59,6 +59,7 @@ public class SceneAmbassador : MonoBehaviour {
         bases.Reset();
         ShowTitle();
         gameover.Hide();
+        pilar.removeTransmissionOrbs();
         break;
       case GameState.PREGAME:
         break;

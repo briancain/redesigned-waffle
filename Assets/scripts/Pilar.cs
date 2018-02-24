@@ -8,7 +8,8 @@ public class Pilar : MonoBehaviour {
   GameObject emissionObject;
 
   private float nextActionTime = 0.0f;
-  private float period = 5f;
+  private float timer = 0f;
+  private float generationCooldown = 2.5f;
 
   private AudioSource audio;
   [SerializeField]
@@ -16,6 +17,8 @@ public class Pilar : MonoBehaviour {
 
   [SerializeField]
   ParticleSystem particleAnimator;
+
+  private List<GameObject> transmissions;
 
   private bool generateTransmissions;
 
@@ -27,17 +30,29 @@ public class Pilar : MonoBehaviour {
     generateTransmissions = false;
   }
 
+  public void removeTransmissionOrbs() {
+    foreach(var tr in transmissions) {
+      Destroy(tr);
+    }
+    transmissions.Clear();
+
+  }
+
   // Use this for initialization
   void Start () {
     audio = GetComponent<AudioSource>();
+    transmissions = new List<GameObject>();
   }
   // Update is called once per frame
   void Update () {
     // Every few seconds, generate an Emission
-    if (Time.time > nextActionTime && generateTransmissions) {
-        nextActionTime += period;
+    if (generateTransmissions) {
+      timer += Time.deltaTime;
+      if (timer >= generationCooldown) {
+        timer = nextActionTime;
         GenerateEmission();
-     }
+       }
+    }
   }
 
   void GenerateEmission() {
@@ -56,7 +71,9 @@ public class Pilar : MonoBehaviour {
     particleAnimator.Play();
 
     Quaternion spawnRotation = Quaternion.Euler(90,0,0);
-    Instantiate(emissionObject, dir, spawnRotation, transform);
+    GameObject trsObj = Instantiate(emissionObject, dir, spawnRotation, transform);
+    transmissions.Add(trsObj);
+
     audio.PlayOneShot(emissionCreateClip, 1f);
   }
 }
