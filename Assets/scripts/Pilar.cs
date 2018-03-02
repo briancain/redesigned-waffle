@@ -9,7 +9,7 @@ public class Pilar : MonoBehaviour {
 
   private float nextActionTime = 0.0f;
   private float timer = 0f;
-  private float generationCooldown = 2.5f;
+  private float generationCooldown = 2.0f;
 
   private AudioSource audio;
   [SerializeField]

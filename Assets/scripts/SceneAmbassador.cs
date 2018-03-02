@@ -62,9 +62,12 @@ public class SceneAmbassador : MonoBehaviour {
         pilar.removeTransmissionOrbs();
         break;
       case GameState.PREGAME:
+        HideTitle();
+        gameover.Hide();
         break;
       case GameState.PLAYING:
         HideTitle();
+        gameover.Hide();
         pilar.startTransmissions();
         break;
       case GameState.GAMEOVER:
